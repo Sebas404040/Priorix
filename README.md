@@ -30,6 +30,60 @@ priorix/
 ├── data/                 # Task storage
 │   └── tareas.json
 └── README.md
+```
 
+---
 
+## 🚀 Funcionalidades
 
+- 📌 **Crear tareas** con nombre, descripción y fecha
+- ✏️ **Editar tareas existentes**
+- 📋 **Visualizar tareas** en formato claro y estético
+- 💾 **Persistencia en JSON**
+- 🧱 **Arquitectura modular** (cada acción en su archivo)
+
+---
+
+## ▶️ Cómo usar Priorix
+
+1. Clona este repositorio:
+
+```bash
+git clone https://github.com/TuUsuario/priorix.git
+cd priorix
+```
+
+2. Ejecuta el arranque:
+
+```bash
+python arranque.py
+```
+
+> Para salir del programa, utiliza la opción `Salir` que aparece en el menú o cierra la terminal.
+
+---
+
+## 📸 Vista previa
+
+> Así se ve Priorix en acción:
+
+![Demo de consola]()
+
+---
+
+## 🔧 Requisitos
+
+- Python 3.7 o superior
+
+---
+
+## 🛠 Contribuir
+
+¿Te gustaría aportar? Haz un fork, crea una nueva rama y envía tu pull request.  
+¡Toda ayuda es bienvenida!
+
+---
+
+## 📜 Licencia
+
+Este proyecto está licenciado bajo la Licencia MIT. 

@@ -1,4 +1,5 @@
 def menuprincipal():
+    from creacion_tarea import crear_tarea
     print("1. Crear tarea")
     print("2. Mostrar tareas")
     print("3.Mostrar tareas para hoy")
@@ -14,6 +15,7 @@ def menuprincipal():
             return menuprincipal()
         if opcion == 1:
             print("Crear tarea")
+            crear_tarea()
         elif opcion == 2:   
             print("Mostrar tareas")
         elif opcion == 3:

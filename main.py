@@ -1,7 +1,7 @@
 def menuprincipal():
     from creacion_tarea import crear_tarea
     from mostrar_tarea import mostrar_tarea, mostrar_hoy
-    from editar_tareas import modificar_tarea
+    from editar_tareas import modificar_tarea, eliminar_tarea
     print("---------------Menu principal---------------")
     print("1. Crear tarea")
     print("2. Mostrar tareas")
@@ -30,6 +30,7 @@ def menuprincipal():
             modificar_tarea()
         elif opcion == 5:
             print("Eliminar tarea")
+            eliminar_tarea()
         elif opcion == 6:
             print("Salir")
     except ValueError:

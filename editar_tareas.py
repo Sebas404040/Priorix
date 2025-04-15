@@ -56,3 +56,36 @@ def modificar_tarea():
     with open("tareas.json", "w") as file:
         json.dump(tareas, file, indent=4)
     print("Tarea modificada con éxito.")
+
+def eliminar_tarea():
+    print ("---------------Eliminar tarea---------------")
+    import json
+    try:
+        with open("tareas.json", "r") as file:
+            tareas = json.load(file)
+    except FileNotFoundError:
+        print("El archivo de tareas no se encuentra disponible.")
+        return
+    if not tareas:
+        print("No hay tareas disponibles.")
+        return
+    print ("---------------Lista de tareas---------------")
+    for id_tarea, info in tareas.items():
+        print(f"🆔 Tarea #{id_tarea}")
+        print(f"📌 Nombre      : {info['nombre_tarea']}")
+        print(f"📝 Descripción : {info['descripcion_tarea']}")
+        print(f"📅 Fecha       : {info['fecha_tarea']}")
+        print("-" * 30)
+    print ("---------------Fin de la lista---------------")
+    print("Selecciona el ID de la tarea que deseas eliminar: ", end="")
+    try:
+        id_tarea_eliminar = input()
+        if id_tarea_eliminar not in tareas:
+            print("ID de tarea no válido.")
+            return eliminar_tarea()
+    except ValueError:
+        print("Entrada no válida. Por favor, ingresa un número.")
+        return eliminar_tarea()
+    del tareas[id_tarea_eliminar]
+    with open("tareas.json", "w") as file:
+        json.dump(tareas, file, indent=4)

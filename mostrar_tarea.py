@@ -17,4 +17,28 @@ def mostrar_tarea ():
         print(f"📅 Fecha       : {info['fecha_tarea']}")
         print("-" * 30)
     print ("---------------Fin de la lista---------------")
-mostrar_tarea()
+
+def mostrar_hoy():
+    import json
+    import datetime
+    try: 
+        with open("tareas.json", "r") as archivo:
+            tareas = json.load(archivo)
+            if not tareas:
+                print("No hay tareas disponibles.")
+                return
+    except FileNotFoundError:
+        print("El archivo de tareas no se encuentra disponible.")
+        return
+    
+    fecha_hoy = datetime.datetime.now().date()
+    fecha_hoy = str(fecha_hoy)
+    print ("---------------Lista de tareas para hoy---------------")
+    for id_tarea, info in tareas.items():
+        if info['fecha_tarea'] == fecha_hoy:
+            print(f"🆔 Tarea #{id_tarea}")
+            print(f"📌 Nombre      : {info['nombre_tarea']}")
+            print(f"📝 Descripción : {info['descripcion_tarea']}")
+            print(f"📅 Fecha       : {info['fecha_tarea']}")
+            print("-" * 30)
+    print ("---------------Fin de la lista---------------")

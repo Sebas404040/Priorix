@@ -1,4 +1,5 @@
 def crear_tarea():
+    from main import menuprincipal
     import json
     import datetime
     try:
@@ -19,3 +20,6 @@ def crear_tarea():
     tareas[numero_tarea] = tarea
     with open("tareas.json", "w") as file:
         json.dump(tareas, file, indent=4)
+    print("Tarea creada con éxito.")
+    print("--------------------------------------")
+    menuprincipal()

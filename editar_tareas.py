@@ -56,8 +56,12 @@ def modificar_tarea():
     with open("tareas.json", "w") as file:
         json.dump(tareas, file, indent=4)
     print("Tarea modificada con éxito.")
+    print("------------------------------")
+    from main import menuprincipal
+    menuprincipal()
 
 def eliminar_tarea():
+    from main import menuprincipal
     print ("---------------Eliminar tarea---------------")
     import json
     try:
@@ -89,3 +93,7 @@ def eliminar_tarea():
     del tareas[id_tarea_eliminar]
     with open("tareas.json", "w") as file:
         json.dump(tareas, file, indent=4)
+    print("Tarea eliminada con éxito.")
+    print("------------------------------")
+    menuprincipal()
+

@@ -1,11 +1,12 @@
 def mostrar_tarea ():
+    from main import menuprincipal
     import json
     try: 
         with open("tareas.json", "r") as archivo:
             tareas = json.load(archivo)
             if not tareas:
                 print("No hay tareas disponibles.")
-                return
+                menuprincipal()
     except FileNotFoundError:
         print("El archivo de tareas no se encuentra disponible.")
         return
@@ -17,8 +18,10 @@ def mostrar_tarea ():
         print(f"📅 Fecha       : {info['fecha_tarea']}")
         print("-" * 30)
     print ("---------------Fin de la lista---------------")
+    menuprincipal()
 
 def mostrar_hoy():
+    from main import menuprincipal
     import json
     import datetime
     try: 
@@ -26,7 +29,7 @@ def mostrar_hoy():
             tareas = json.load(archivo)
             if not tareas:
                 print("No hay tareas disponibles.")
-                return
+                menuprincipal()
     except FileNotFoundError:
         print("El archivo de tareas no se encuentra disponible.")
         return
@@ -42,3 +45,4 @@ def mostrar_hoy():
             print(f"📅 Fecha       : {info['fecha_tarea']}")
             print("-" * 30)
     print ("---------------Fin de la lista---------------")
+    menuprincipal()

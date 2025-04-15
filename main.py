@@ -1,6 +1,8 @@
 def menuprincipal():
     from creacion_tarea import crear_tarea
     from mostrar_tarea import mostrar_tarea, mostrar_hoy
+    from editar_tareas import modificar_tarea
+    print("---------------Menu principal---------------")
     print("1. Crear tarea")
     print("2. Mostrar tareas")
     print("3.Mostrar tareas para hoy")
@@ -25,6 +27,7 @@ def menuprincipal():
             mostrar_hoy()
         elif opcion == 4:
             print("Modificar tarea")
+            modificar_tarea()
         elif opcion == 5:
             print("Eliminar tarea")
         elif opcion == 6:
